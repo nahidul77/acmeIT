@@ -31,7 +31,9 @@ class UserController extends Controller
         $user->usertype = $request->usertype;
         $user->name = $request->name;
         $user->email = $request->email;
-        $user->password = $request->password;
+        if(isset($request->password)){
+            $user->password = bcrypt($request->password);
+        }
         $user->save();
     }
 
@@ -39,5 +41,27 @@ class UserController extends Controller
         $this->dataValidate($request);
         $user = new User();
         $this->saveData($user, $request);
+        return redirect()->route('users.view')->with('success', 'Data Saved Successfully');
+    }
+
+    public function edit($id){
+        $user = User::find($id);
+        return view('backend.user.user-edit', ['user'=>$user]);
+    }
+
+    public function update($id, Request $request){
+        //$this->dataValidate($request);
+        $user = User::find($id);
+        $this->saveData($user, $request);
+        return redirect()->route('users.view')->with('success', 'Data Updated Successfully');
+    }
+
+    public function delete($id){
+        $user = User::find($id);
+        if(file_exists('public/upload/user_images/'.$user->image) AND !empty($user->image)){
+            unlink('public/upload/user_images/'. $user->image);
+        }
+        $user->delete();
+        return redirect()->route('users.view')->with('success', 'Data Deleted Successfully');
     }
 }

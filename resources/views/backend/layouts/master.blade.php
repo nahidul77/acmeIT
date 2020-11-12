@@ -29,6 +29,14 @@
   <link rel="stylesheet" href="{{asset('/')}}backend/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
   <!-- jQuery -->
   <script src="{{asset('/')}}backend/plugins/jquery/jquery.min.js"></script>
+  <style>
+    .notifyjs-corner{
+      z-index: 10000 !important;
+    }
+  </style>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/notify/0.4.2/notify.min.js"></script>
+  <!--sweet alert-->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 </head>
 <body class="hold-transition sidebar-mini layout-fixed">
 <div class="wrapper">
@@ -90,6 +98,13 @@
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
     @yield('content')
+    @if(session()->has('success'))
+      <script>
+        $(function(){
+          $.notify("{{session()->get('success')}}", {globalPosition:'top right', className:'success'});
+        });  
+      </script>        
+    @endif
     <!-- /.content -->
   </div>
   <!-- /.content-wrapper -->
@@ -163,6 +178,32 @@
       "autoWidth": false,
       "responsive": true,
     });
+  });
+</script>
+<script>
+  $(function(){
+    $(document).on('click', '#delete', function(e){
+      e.preventDefault();
+      var link = $(this).attr('href');
+      Swal.fire({
+        title: 'Are you sure?',
+        text: "You want to delete this data!",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Yes, delete it!'
+      }).then((result) => {
+        if (result.isConfirmed) {
+          window.location.href = link;
+          Swal.fire(
+            'Deleted!',
+            'Your Data has been deleted.',
+            'success'
+          )
+        }
+      })
+    }); 
   });
 </script>
 </body>

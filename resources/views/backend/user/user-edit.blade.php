@@ -10,7 +10,7 @@
             <div class="col-sm-6">
               <ol class="breadcrumb float-sm-right">
                 <li class="breadcrumb-item"><a href="{{route('home')}}">Home</a></li>
-                <li class="breadcrumb-item active">Add User</li>
+                <li class="breadcrumb-item active">Update User</li>
               </ol>
             </div><!-- /.col -->
           </div><!-- /.row -->
@@ -28,40 +28,31 @@
               <div class="card">
                 <div class="card-header">
                   <h3>
-                      Add User
+                      Update User
                     <a class="btn btn-success btn-sm float-right" href="{{route('users.view')}}"><i class="fa fa-list"></i> View Users</a>  
                   </h3>
                 </div><!-- /.card-header -->
                 <div class="card-body">
-                   <form id="storeForm" action="{{route('users.store')}}" method="POST">
+                   <form id="updateForm" action="{{route('users.update', $user->id)}}" method="POST">
                        @csrf
                        <div class="form-group">
                         <label for="usertype">User Type</label>
                         <select class="custom-select form-control-border" name="usertype" id="usertype">
                           <option>---Select Role---</option>
-                          <option value="Admin">Admin</option>
-                          <option value="User">User</option>
+                          <option value="Admin" {{($user->usertype == "Admin")? 'Selected':''}}>Admin</option>
+                          <option value="User" {{($user->usertype == "User")? 'Selected':''}}>User</option>
                         </select>
                         <font style="color: red">{{($errors->has('usertype'))?($errors->first('usertype')):''}}</font>
                       </div>
                      <div class="form-group">
                         <label for="name">Name</label>
-                        <input type="text" name="name" class="form-control" id="name" placeholder="Enter Name">
+                        <input type="text" name="name" value="{{$user->name}}" class="form-control" id="name" placeholder="Enter Name">
                         <font style="color: red">{{($errors->has('name'))?($errors->first('name')):''}}</font>
                       </div>
                       <div class="form-group">
                         <label for="email">Email address</label>
-                        <input name="email" type="email" class="form-control" id="email" placeholder="Enter email">
+                        <input name="email" value="{{$user->email}}" type="email" class="form-control" id="email" placeholder="Enter email">
                         <font style="color: red">{{($errors->has('email'))?($errors->first('email')):''}}</font>
-                      </div>
-                      <div class="form-group">
-                        <label for="password">Password</label>
-                        <input type="password" name="password" class="form-control" id="password" placeholder="Enter email">
-                        <font style="color: red">{{($errors->has('password'))?($errors->first('password')):''}}</font>
-                      </div>
-                      <div class="form-group">
-                        <label for="password2">Confirm Password</label>
-                        <input type="password" name="password2" class="form-control" id="password2" placeholder="Password">
                       </div>
                       <div class="card-footer">
                         <button type="submit" class="btn btn-primary">Submit</button>
@@ -78,7 +69,7 @@
       </section>
       <script>
         $(function () {
-          $('#storeForm').validate({
+          $('#updateForm').validate({
             rules: {
                 usertype: {
                 required: true,
@@ -89,14 +80,6 @@
               email: {
                 required: true,
                 email: true,
-              },
-              password: {
-                required: true,
-                minlength: 6
-              },
-              password2: {
-                required: true,
-                equalTo: '#password'
               },
             },
             messages: {
@@ -109,14 +92,6 @@
               email: {
                 required: "Please enter a email address",
                 email: "Please enter a vaild email address"
-              },
-              password: {
-                required: "Please enter password",
-                minlength: "Your password must be at least 6 characters long"
-              },
-              password2: {
-                required: "Please enter confirm password",
-                equalTo: "Confirm password does not match"
               },
             },
             errorElement: 'span',

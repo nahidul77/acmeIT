@@ -27,3 +27,9 @@ Route::prefix('users')->group(function(){
     Route::post('/update/{id}', 'Backend\UserController@update')->name('users.update');
     Route::get('/delete/{id}', 'Backend\UserController@delete')->name('users.delete');
 });
+
+Route::prefix('profiles')->group(function(){
+    Route::get('/view', 'Backend\ProfileController@view')->name('profiles.view');
+    Route::get('/edit', 'Backend\ProfileController@edit')->name('profiles.edit');
+    Route::post('/update', 'Backend\ProfileController@update')->name('profiles.update');
+});

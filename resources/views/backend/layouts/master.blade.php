@@ -105,6 +105,13 @@
         });  
       </script>        
     @endif
+    @if(session()->has('error'))
+      <script>
+        $(function(){
+          $.notify("{{session()->get('error')}}", {globalPosition:'top right', className:'error'});
+        });  
+      </script>        
+    @endif
     <!-- /.content -->
   </div>
   <!-- /.content-wrapper -->

@@ -1,0 +1,326 @@
+
+
+/*--- Common css ---*/
+.link a{
+    -webkit-transition: all .0s;
+    -moz-transition: all .0s;
+    -ms-transition: all .0s;
+    -o-transition: all .0s;
+    transition: all .0s;
+}
+.link a:hover{color: #dc3545 !important;}
+
+/*--- header css ---*/
+#main-logo {
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -ms-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    transition: all 0.5s;
+}
+
+.navigation-fixed-wrapper.fixed #main-logo {
+    width: 60px !important;
+}
+
+/*--- heading css ---*/
+.page-title-section {
+    background-color: #fcfcfc;
+    border-bottom: 1px solid #fcfcfc;
+    padding: 70px 0px;
+    background-size: 60% 100%;
+    background-position: 84%;
+    text-align: center;
+    background-repeat: no-repeat;
+}
+.page-title-section ul li:after {
+    color: #000;
+}
+
+.page-title-section h1 {
+    color: #dc3545 !important;
+    text-transform: uppercase;
+    font-size:34px;
+}
+
+.page-title-section ul li {
+    color: #343a40 !important;
+}
+
+.page-title-section ul li a {
+    color: #121416 !important;
+}
+
+.page-title-section ul li a:hover {
+    color: #d21e2b !important;
+}
+
+/*--- services css ---*/
+.services-block {
+    background: #666;
+}
+.services-block.services-block-red{
+    background: #bf1424!important;
+}
+.services-block.services-block-red .section-heading-line,
+.services-block.services-block-red .section-heading-line-left{
+    background: #fff;
+}
+.services-block.services-block-red .white-list li i {
+    color: #fff;
+}
+.services-block .feature-box {
+    margin-bottom: 10px !important;
+}
+.pricing-list h4 {
+    font-size: 25px;
+    display: block;
+    border-bottom: 2px solid;
+}
+.pricing-list h2 {
+    font-size: 44px;
+}
+.pricing-list ul li b {
+    font-size: 21px;
+    display: block;
+    border-top: 1px solid #efefef;
+    padding-top: 10px;
+}
+/*--- owl-carousel css ---*/
+.owl-carousel .owl-item img {
+    width: auto !important;
+    height: 50px !important;
+    margin: auto !important;
+    /*-webkit-filter: grayscale(100%);*/
+    /*filter: grayscale(100%);*/
+    /*-webkit-transition: -webkit-filter .2s;*/
+    /*transition: -webkit-filter .2s;*/
+    /*transition: filter .2s;*/
+    /*transition: filter .2s, -webkit-filter .2s;*/
+    opacity: 1 !important;
+}
+
+.owl-carousel .owl-item img:hover {
+    /*-webkit-filter: grayscale(0);*/
+    /*filter: grayscale(0);*/
+}
+
+/*--- feature-box css ---*/
+.feature-box {
+    -webkit-box-shadow: none !important;
+    -moz-box-shadow: none !important;
+    box-shadow: none !important;
+}
+
+.swiper-button-next,
+.swiper-container-rtl .swiper-button-prev {
+    right: 0 !important;
+}
+
+/* swiper slider css */
+/*@font-face{
+    font-family:'Aardvark';
+    src:url('../fonts/Aardvark Sk8.otf');
+    src:url('../fonts/Aardvark Sk8.otf') format('opentype'),
+    url('../fonts/Aardvark Sk8.woff') format('woff')
+}
+@font-face{
+    font-family:'Booklet';
+    src:url('../fonts/Booklet Cordel.ttf');
+    src:url('../fonts/Booklet Cordel.ttf') format('truetype');}
+@font-face{
+    font-family:'SolaimanLipi';
+    src:url('https://s3-ap-southeast-1.amazonaws.com/images.jagonews24/common/fonts/solaimanlipi_20-04-07.eot');
+    src:url('https://s3-ap-southeast-1.amazonaws.com/images.jagonews24/common/fonts/solaimanlipi_20-04-07.eot') format('embedded-opentype'),
+    url('https://s3-ap-southeast-1.amazonaws.com/images.jagonews24/common/fonts/solaimanlipi_20-04-07.woff') format('woff'),
+    url('https://s3-ap-southeast-1.amazonaws.com/images.jagonews24/common/fonts/solaimanlipi_20-04-07.ttf') format('truetype'),
+    url('https://s3-ap-southeast-1.amazonaws.com/images.jagonews24/common/fonts/solaimanlipi_20-04-07.svg') format('svg');}
+
+@font-face{font-family:'KGBrokenVesselsSketch';
+    src: url('../fonts/KGBrokenVesselsSketch.ttf');
+    src: url('../fonts/KGBrokenVesselsSketch.ttf') format('truetype')
+}*/
+@font-face{font-family:'TENOCLOCK';
+    src: url('../fonts/TENOCLOCK-Regular.ttf');
+    src: url('../fonts/TENOCLOCK-Regular.ttf') format('truetype')
+}
+
+/*.swiper-slide.slider-1 .slider-content .dark-button,
+.swiper-slide.slider-1 .slider-content h2 {
+    font-family:'Aardvark', sans-serif;
+}
+.swiper-slide.slider-2 .slider-content .dark-button,
+.swiper-slide.slider-2 .slider-content h2 {
+    font-family:'Booklet', sans-serif;
+}
+.swiper-slide.slider-3 .slider-content .dark-button,
+.swiper-slide.slider-3 .slider-content h2 {
+    font-family:'KGBrokenVesselsSketch', sans-serif;
+}
+.swiper-slide.slider-4 .slider-content .dark-button,
+.swiper-slide.slider-4 .slider-content h2 {
+    font-family:'Aardvark', sans-serif;
+}
+.swiper-slide.slider-5 .slider-content .dark-button,
+.swiper-slide.slider-5 .slider-content h2 {
+    font-family:'TENOCLOCK', sans-serif;
+}*/
+.swiper-slide .slider-content .dark-button,
+.swiper-slide .slider-content h2 {
+    font-family:'TENOCLOCK', sans-serif;
+}
+.swiper-container {
+    height: 80vh !important;
+}
+
+/* slider-content */
+.swiper-slide {
+    background-color: #fff !important;
+}
+
+.slider-content p {
+    font-size: 16px;
+    color: rgb(0, 0, 0) !important;
+}
+
+.slider-content h2 {
+    color: #6a6a6a;
+    font-size: 36px;
+}
+
+
+
+.slider-content p {
+    line-height: inherit !important;
+}
+
+.slider-content .dark-button {
+    background: #d21e2b !important;
+}
+
+.slider-content .dark-button:hover {
+    background: #a7121c !important;
+}
+
+.owl-carousel .owl-item {
+    background: #fff;
+    padding: 5px 0;
+}
+
+/* Map css */
+.map {border: 1px solid rgba(0, 0, 0, 0.1);}
+
+.map-description {
+    border: 1px solid #e2edea;
+    height: 100%;
+    padding: 28px;
+}
+
+.map-description p {
+    font-size: 1.5rem;
+    line-height: 1.5;
+    font-style: italic;
+    color: #202e39;
+    margin: 0;
+}
+
+.page-contacts-widget-wrapper {
+    border: 1px solid #e2edea;
+    padding: 29px;
+    margin-top: 60px;
+    height: calc(100% - 60px);
+}
+
+.page-contacts-widget {width: 100%;}
+
+/* Footer css */
+.footer-list li {padding: 0px 0px;}
+footer {padding-bottom: 10px !important;}
+
+.footer-bar {
+    padding-top: 15px;
+}
+
+/* Media query css */
+@media (max-width: 767px) {
+    .mmt-50 {margin-top: 50px !important;}
+    .mmt-30 {margin-top: 30px !important;}
+    .mmt-10 {margin-top: 10px !important;}
+    .mmt-0 {margin-top: 0 !important;}
+    .mmb-50 {margin-bottom: 50px !important;}
+    .mmb-30 {margin-bottom: 30px !important;}
+    .mmb-10 {margin-bottom: 10px !important;}
+    .mmb-0 {margin-bottom: 0 !important;}
+    .mpt-50 {padding-top: 50px !important;}
+    .mpt-40 {padding-top: 40px !important;}
+    .mpt-30 {padding-top: 30px !important;}
+    .mpt-10 {padding-top: 10px !important;}
+    .mpt-0 {padding-top: 0 !important;}
+    .mpb-50 {padding-bottom: 50px !important;}
+    .mpb-40 {padding-bottom: 40px !important;}
+    .mpb-30 {padding-bottom: 30px !important;}
+    .mpb-10 {padding-bottom: 10px !important;}
+    .mpb-0 {padding-bottom: 0 !important;}
+    .m-text-center {text-align: center!important;}
+    .m-flex-column-reverse {
+        -ms-flex-direction: column-reverse !important;
+        flex-direction: column-reverse !important;
+    }
+
+    .navigation {padding: 10px 0px;}
+    #main_logo {width: 65px;}
+    .section-heading h2 {font-size: 30px;}
+    .section-heading h3 {font-size: 26px;}
+    .section-heading h4 {
+        font-size: 18px;
+        line-height: 1;
+    }
+
+    /*.swiper-container {
+        height: calc(100vh - 70px)!important;
+        background: #f8f8f8;
+    }*/
+    .swiper-container-fade .swiper-slide {
+    }
+    .slider-content h2 {font-size: 25px;}
+    .swiper-slide {
+        text-align: center;
+        font-size: inherit;
+        background-color: #f8f8f8 !important;
+        background-position: center;
+        background-size: cover;
+        display: block;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        -webkit-justify-content: unset;
+        justify-content: unset;
+        -webkit-box-align: unset;
+        -ms-flex-align: unset;
+        -webkit-align-items: center;
+        align-items: unset;
+    }
+
+    .page-title-section > .container {
+        z-index: 100;
+        background: rgba(241, 241, 241, 0.83);
+        margin: -30px 0;
+        padding: 25px 0 15px;
+    }
+
+    .page-title-section {
+        padding: 30px 0 !important;
+        background-position: 115% center;
+        position: relative;
+        background-size: cover;
+    }
+    .page-title-section {
+
+
+
+    }
+    .page-title-section h1 {font-size: 24px;}
+    .swiper-button-next,
+    .swiper-button-prev {
+        background-image: unset;
+    }
+}

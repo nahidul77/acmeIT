@@ -21,7 +21,7 @@
                             <li>{{$popular->support}}</li>
                         </ul>
                         <div class="text-center mt-25">
-                            <a href="home-internet.html" class="text-danger font-weight-bold">View All Packages  <i class="fa fa-long-arrow-right"></i></a>
+                            <a href="{{route('packages')}}" class="text-danger font-weight-bold">View All Packages  <i class="fa fa-long-arrow-right"></i></a>
                         </div>
                     </div>
                 </div>

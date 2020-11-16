@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="zxx">
 <head>
-    <title>Amber IT Ltd | High Speed Broadband Internet Service Provider in Bangladesh</title>
+    <title>Acme IT Ltd | High Speed Broadband Internet Service Provider in Bangladesh</title>
     <meta charset="UTF-8">
     <!-- Favicon -->
     <link rel="shortcut icon" type="image/ico" href="img/favicon.ico">

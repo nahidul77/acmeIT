@@ -28,7 +28,7 @@
 			<div class="col-md-8 col-sm-8 col-12 mmt-30">
 				<div class="pl-30-md">
 					<div class="mt-35">
-						<a href="contact.html" class="primary-button button-sm mb-15-xs">Contact Us</a>
+						<a href="{{route('contact')}}" class="primary-button button-sm mb-15-xs">Contact Us</a>
 					</div>
 				</div>
 			</div>

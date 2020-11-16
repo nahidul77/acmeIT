@@ -29,9 +29,16 @@
                     <h4>Let's Talk About Your Business</h4>
                     <div class="section-heading-line-left"></div>
                 </div>
+                @if(Session::get('success'))
+                    <div class="alert alert-success alert-dismissible">
+                        <button type="button" class="close" data-dismiss="alert">&times;</button>
+                        <strong>{{Session::get('success')}}</strong>
+                    </div>
+                @endif
                 <div class="contact-form-box mt-30">
                     <!-- Form START -->
-                    <form class="contact-form myform" name="contctForm" id="contctForm" method="post" role="form" novalidate="novalidate">
+                    <form action="{{route('contact.store')}}" class="contact-form myform"   method="POST">
+                        @csrf
                         <div class="row">
                             <div class="col-md-6 col-sm-6 col-12">
                                 <input type="text" name="first_name" id="first_name" placeholder="First name" required="">

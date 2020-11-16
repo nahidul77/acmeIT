@@ -18,6 +18,7 @@ Route::get('/', 'Frontend\FrontendController@home')->name('index');
 Route::get('/packages', 'Frontend\FrontendController@packages')->name('packages');
 Route::get('/about', 'Frontend\FrontendController@about')->name('about');
 Route::get('/contact', 'Frontend\FrontendController@contact')->name('contact');
+Route::post('/contact/store', 'Frontend\FrontendController@store')->name('contact.store');
 
 Auth::routes();
 
@@ -102,6 +103,9 @@ Route::group(['middleware'=>'auth'], function(){
         Route::get('/edit/{id}', 'Backend\ContactController@edit')->name('contacts.edit');
         Route::post('/update/{id}', 'Backend\ContactController@update')->name('contacts.update');
         Route::get('/delete/{id}', 'Backend\ContactController@delete')->name('contacts.delete');
+        Route::get('/communicate', 'Backend\ContactController@communicateView')->name('communicates.view');
+        Route::get('/communicate/delete/{id}', 'Backend\ContactController@communicateDelete')->name('communicates.delete');
+
     });
 });
 
